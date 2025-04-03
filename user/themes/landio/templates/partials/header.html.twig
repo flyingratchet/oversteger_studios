@@ -1,0 +1,18 @@
+<header
+  class="jumbotron bg-inverse text-center center-vertically"
+  role="banner"
+  style="background-image: url('{{ theme_url }}/img/{{ site.header.hero_image }}'); background-size: cover; background-position: center; z-index: 0;">
+  
+  <div class="container" style="position: relative; z-index: 2;">
+    <h1 class="display-3">{{ site.header.title }}</h1>
+    <h2 class="m-b-lg">{{ site.header.description|raw }}</h2>
+    {% for item in site.header.buttons %}
+      <a class="btn btn-secondary-outline m-b-md" href="{{ item.url }}" role="button">
+        <span class="icon-{{ item.icon }}"></span>{{ item.text }}
+      </a>
+    {% endfor %}
+  </div>
+
+</header>
+
+

@@ -1,7 +1,46 @@
-title: Grav
+title: Oversteger Studios  # Name of the site
 author:
-  name: Joe Bloggs
-  email: 'joe@example.com'
+  name: Rick Overson and Laura Steger
 metadata:
-    description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+    description: 'Land.io is a carefully crafted landing page UI kit and landing page template built on Bootstrap 4, designed by Peter Finlan and developed by Taty Grassini.'
 
+# TopBar
+logo:
+  icon: logo
+  text: Land.io
+  url:
+
+# User Panel
+userlinks:
+    - text: Sample link
+      url: "#"
+    - text: Another Sample link
+      url: "#"
+
+# Header customization
+header:
+  title: Oversteger Studios
+  description: A data-driven celebration of the <em>incredible</em> ecology of the Sonoran Desert.
+  hero_image: 20220417-Mojave_Roadtrip-Overson_Steger-B7733.jpg
+  buttons:
+    - text: "Our projects"
+      url: "https://overstegerstudios.com"
+      icon: "envelope"
+
+# Footer customization
+footer:
+  links:
+    - text: Terms &amp; Conditions
+      url: "#"
+    - text: Legals
+      url: "#"
+
+#Social Count
+socialcount:
+    url: https://www.getgrav.org
+    facebook_url: "#"
+    twitter_url: ""
+    linkedin_url: "#"
+
+#Copyright
+copyright: Land.io 2015. <br> Designed by Peter Finlan, developed by Taty Grassini, exclusively for Codrops.
