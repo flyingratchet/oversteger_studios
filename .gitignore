@@ -1,50 +1,21 @@
-# Composer
-.composer
-vendor/*
-!*/vendor/*
+# Ignore Grav core & system files
+.cache/
+logs/
+tmp/
+vendor/
+system/
+backup/
+bin/
+assets/
+index.php
+composer.*
 
-# Sass
-.sass-cache
+# VS Code settings (optional)
+!.vscode/
 
-# Grav Specific
-backup/*
-!backup/.*
-cache/*
-!cache/.*
-assets/*
-!assets/.*
-logs/*
-!logs/.*
-images/*
-!images/.*
-user/accounts/*
-!user/accounts/.*
-user/data/*
-!user/data/.*
-user/plugins/*
-!user/plugins/.*
-user/themes/*
-!user/themes/.*
-user/**/config/security.yaml
+# OS junk
+.DS_Store
 
-# Environments
-.env
-.gravenv
-
-# OS Generated
-.DS_Store*
-ehthumbs.db
-Icon?
-Thumbs.db
-*.swp
-
-# phpstorm
-.idea/*
-
-# testing stuff
-tests/_output/*
-tests/_support/_generated/*
-tests/cache/*
-tests/error.log
-system/templates/testing/*
-/user/config/versions.yaml
+# Track only user content
+!.gitignore
+!/user/
