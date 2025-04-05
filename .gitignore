@@ -1,5 +1,6 @@
-# Ignore Grav core & system files
+# Grav core & system files
 .cache/
+cache/
 logs/
 tmp/
 vendor/
@@ -7,15 +8,40 @@ system/
 backup/
 bin/
 assets/
+images/
 index.php
 composer.*
+.htaccess
+webserver-configs/
+user/data/
+user/accounts/
+user/config/security.yaml
+user/config/versions.yaml
+
+# Grav plugin files we don't usually track
+user/plugins/**/languages/
+user/plugins/**/node_modules/
+user/plugins/**/compiled/
+
+# Optional: ignore admin translations if not customizing
+user/plugins/admin/languages/
 
 # VS Code settings (optional)
 !.vscode/
 
 # OS junk
 .DS_Store
+ehthumbs.db
+Thumbs.db
+Icon?
 
-# Track only user content
+# Git-related
+*.swp
+*.swo
+.idea/
+*.bak
+*.orig
+
+# Include only what's needed
 !.gitignore
 !/user/

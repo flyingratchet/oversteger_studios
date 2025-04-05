@@ -2,14 +2,24 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Start Grav Server",
+      "label": "Start Grav Server (No Deprecated Warnings)",
       "type": "shell",
-      "command": "php -S localhost:8000 system/router.php",
+      "command": "php",
+      "args": [
+        "-d",
+        "error_reporting=E_ALL & ~E_DEPRECATED & ~E_NOTICE",
+        "-S",
+        "localhost:8000",
+        "system/router.php"
+      ],
       "options": {
         "cwd": "${workspaceFolder}"
       },
-      "group": "build",
-      "problemMatcher": []
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     }
   ]
 }
