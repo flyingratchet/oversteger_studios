@@ -2,7 +2,6 @@
 title: Photography
 menu: Photography
 visible: true
-onpage_menu: true
 name: photography
 header_class: text-center
 ---
