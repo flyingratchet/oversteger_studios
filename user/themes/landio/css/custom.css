@@ -1,0 +1,42 @@
+/* Simple responsive image gallery layout */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .gallery-grid img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .gallery-grid a {
+    flex: 1 1 calc(33.333% - 2rem);
+    max-width: calc(33.333% - 2rem);
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-grid a {
+      flex: 1 1 calc(50% - 1rem);
+      max-width: calc(50% - 1rem);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-grid a {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+  
+  .gallery-grid img:hover {
+    transform: scale(1.03);
+  }
+  
