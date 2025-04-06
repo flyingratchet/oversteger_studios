@@ -1,5 +1,6 @@
 ---
 title: Compendium
+menu: Compendium
 features:
     -
         title: 250
