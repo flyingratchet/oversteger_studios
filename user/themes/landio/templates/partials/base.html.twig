@@ -64,6 +64,11 @@
 
     {% block bottom %}
         {{ assets.js('bottom')|raw }}
+        <script>
+        $(document).ready(function(){
+            $('.gallery-grid a').featherlightGallery();
+        });
+        </script>
     {% endblock %}
 </body>
 </html>

@@ -65,11 +65,6 @@ content:
         custom:
             - _intro
             - _compendium
-            - _photography
-            - _video
-            - _pricing
-            - _testimonials
-            - _text
-            - _news
+            - _photography            
             - _contact
 ---
