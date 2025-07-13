@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title or "Massively" }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+  <div id="wrapper" class="fade-in">
+    <header id="header">
+      <a href="/" class="logo">{{ site.site_title or "My Portfolio" }}</a>
+    </header>
+    <div id="main">
+      <article class="post">
+        {% if image %}
+          <span class="image fit"><img src="{{ image }}" alt="" /></span>
+        {% endif %}
+        <header class="major">
+          <h1>{{ title }}</h1>
+        </header>
+        {{ content | safe }}
+      </article>
+    </div>
+    <footer id="footer">
+      <p>&copy; {{ site.site_title or "My Portfolio" }}. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+    </footer>
+  </div>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/browser.min.js"></script>
+  <script src="/assets/js/breakpoints.min.js"></script>
+  <script src="/assets/js/util.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

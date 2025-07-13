@@ -1,0 +1,12 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<div id="main" class="alt">
+  <section class="post">
+    <header class="major">
+      <h1>{{ title }}</h1>
+    </header>
+    {{ content | safe }}
+  </section>
+</div>
+{% endblock %}
