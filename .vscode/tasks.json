@@ -2,14 +2,41 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Deploy Eleventy Site",
+      "label": "Eleventy: Serve (local dev)",
       "type": "shell",
-      "command": "npx @11ty/eleventy && git push",
+      "command": "npx @11ty/eleventy --serve",
       "group": "build",
-      "problemMatcher": [],
-      "options": {
-        "cwd": "${workspaceFolder}"
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Eleventy: Build",
+      "type": "shell",
+      "command": "npx @11ty/eleventy",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
       }
+    },
+    {
+      "label": "Deploy to overstegerstudios.com",
+      "type": "shell",
+      "command": "rsync -avz --delete ./_site/ hopperwiki:/home/hopperwi/overstegerstudios.com/",
+      "dependsOn": "Eleventy: Build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
     }
   ]
 }
