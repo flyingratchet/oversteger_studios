@@ -28,9 +28,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/projects");
 
-  // 🗂️ Project collection for homepage list
+  // 🗂️ Project collection for homepage list, sorted by frontmatter `order`
   eleventyConfig.addCollection("projects", function(collection) {
-    return collection.getFilteredByTag("project");
+    return collection.getFilteredByTag("project").sort((a, b) => {
+      return (a.data.order || 0) - (b.data.order || 0);
+    });
   });
 
   return {

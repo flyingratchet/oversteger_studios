@@ -52,72 +52,19 @@
 	<div id="main">
 		<div class="inner">
 			<section class="tiles">
-				<article class="style1">
+				{% for project in collections.projects %}
+				<article class="{{ project.data.tile_style }}">
 					<span class="image">
-						<img src="/images/20230610-Miles_Ranch_Trailhead-Overson_Steger-B1141.jpg" alt="Sonoran Species Compendium" />
+						<img src="{{ project.data.tile_image }}" alt="{{ project.data.title }}" />
 					</span>
-					<a href="/projects/compendium/">
-						<h2>Sonoran Species Compendium</h2>
+					<a href="{{ project.url }}">
+						<h2>{{ project.data.title }}</h2>
 						<div class="content">
-							<p>A meticulous cataloging effort of species and their interactions at three focal sites in the Sonoran Desert.</p>
+							<p>{{ project.data.tile_description }}</p>
 						</div>
 					</a>
 				</article>
-				<article class="style2">
-					<span class="image">
-						<img src="/images/20220417-Mojave_Roadtrip-Overson_Steger-B7733.jpg" alt="Photography" />
-					</span>
-					<a href="/projects/photography/">
-						<h2>Photography</h2>
-						<div class="content">
-							<p>Photography as a means to capture biodiversity in space and time.</p>
-						</div>
-					</a>
-				</article>
-				<article class="style3">
-					<span class="image">
-						<img src="/images/20230518-Tempe_House-Overson_Steger-B9859.jpg" alt="Rewilding the Yard" />
-					</span>
-					<a href="/projects/rewilding/">
-						<h2>Rewilding the Yard</h2>
-						<div class="content">
-							<p>An intimate experiment in transforming an urban yard into a haven for native plants and animals.</p>
-						</div>
-					</a>
-				</article>
-				<article class="style4">
-					<span class="image">
-						<img src="/images/20230729-Tempe_House-Overson_Steger-B3849-Enhanced-NR.jpg" alt="Biological Interactions" />
-					</span>
-					<a href="/projects/interactions/">
-						<h2>Biological Interactions</h2>
-						<div class="content">
-							<p>Documenting ecological relationships between organisms using data-driven tools.</p>
-						</div>
-					</a>
-				</article>
-				<article class="style5">
-					<span class="image">
-						<img src="/images/WhiskerWiki Screen shot 2025-07-09.png" alt="WhiskerWiki" />
-					</span>
-					<a href="/projects/whiskerwiki/">
-						<h2>WhiskerWiki</h2>
-						<div class="content">
-							<p>A field ID tool for shrews, moles, and small rodents of the United States.</p>
-						</div>
-					</a>
-				</article>
-				<article class="style6">
-					<span class="image">
-						<img src="/images/20230718-Tempe_House-Overson_Steger-F4892.jpg" alt="Artwork" />
-					</span>
-					<a href="/projects/artwork/">
-						<h2>Artwork</h2>
-						<div class="content">
-							<p>Sketches of desert wildlife — by Laura Steger.</p>
-						</div>
-					</a>
-				</article>
+				{% endfor %}
 			</section>
 		</div>
 	</div>
