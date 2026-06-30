@@ -7,6 +7,6 @@ tile_style: style2
 tile_image: /images/20220417-Mojave_Roadtrip-Overson_Steger-B7733.jpg
 tile_description: Photography as a means to capture biodiversity in space and time.
 ---
-Some intro text about your photography.
+A growing collection of wildlife and natural history photography that celebrates the beauty, behavior, and hidden details of the living world.
 
 {% imageGrid "projects/photography/images" %}

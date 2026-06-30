@@ -12,6 +12,10 @@ tile_description: An intimate experiment in transforming an urban yard into a ha
 
 We’re reimagining an urban yard in the Sonoran Desert as a haven for native insects, birds, and plants. This project combines ecological landscaping with citizen science to track species that move in over time.
 
+
+What happens when a suburban yard is designed for wildlife instead of lawns? Over more than a decade, we’ve transformed our Phoenix landscape into native habitat while documenting the remarkable return of biodiversity.
+
+
 ### Goals:
 - Replace non-native grass with native perennials and annuals
 - Provide host plants for native insects
