@@ -1,16 +1,25 @@
 {
-  "name": "oversteger_studios",
+  "name": "clay-astro-theme",
   "version": "1.0.0",
-  "description": "",
-  "main": ".eleventy.js",
+  "description": "A minimalist, high-performance Astro theme for photographers and artists.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^5.16.5",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "postcss-color-function": "^4.1.0",
+    "postcss-custom-properties": "^14.0.6",
+    "postcss-easy-import": "^4.0.0"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true,
+    "fsevents@2.3.3": true,
+    "sharp@0.34.5": true
   }
 }
