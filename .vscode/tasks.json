@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Eleventy: Serve (local dev)",
+      "label": "Astro: Dev Server",
       "type": "shell",
-      "command": "npx @11ty/eleventy --serve",
+      "command": "npx astro dev",
       "group": "build",
       "presentation": {
         "reveal": "always",
@@ -14,9 +14,9 @@
       "problemMatcher": []
     },
     {
-      "label": "Eleventy: Build",
+      "label": "Astro: Build",
       "type": "shell",
-      "command": "npx @11ty/eleventy",
+      "command": "npx astro build",
       "group": "build",
       "presentation": {
         "reveal": "always",
@@ -26,8 +26,8 @@
     {
       "label": "Deploy to overstegerstudios.com",
       "type": "shell",
-      "command": "rsync -avz --delete ./_site/ hopperwiki:/home/hopperwi/overstegerstudios.com/",
-      "dependsOn": "Eleventy: Build",
+      "command": "rsync -avz --delete ./dist/ hopperwiki:/home/hopperwi/overstegerstudios.com/",
+      "dependsOn": "Astro: Build",
       "group": {
         "kind": "build",
         "isDefault": true
