@@ -8,10 +8,12 @@ export interface Props {
 const { count, post, slug } = Astro.props;
 const thumbnail = post.data.thumbnail;
 const title = post.data.title;
+const imagePosition = post.data.image_position || 'center center';
 const isLarge = count % 3 === 0;
 
-// Construct background image style
-const bgStyle = thumbnail ? `background-image: url(${thumbnail});` : '';
+const bgStyle = thumbnail
+  ? `background-image: url(${thumbnail}); background-position: ${imagePosition};`
+  : '';
 const postClass = `post-card ${isLarge ? 'post-card-large' : ''} ${thumbnail ? 'with-image' : 'no-image'} post`;
 ---
 
