@@ -3,14 +3,22 @@ templateKey: contact-page
 title: About / Contact
 ---
 
-Oversteger Studios is a nonprofit collaboration between Rick Overson and Laura Steger focused on natural history outreach, desert ecology, scientific photography, and community-engaged data projects.
+Oversteger Studios is an independent natural history studio created by Rick Overson and Laura Steger.
 
-We build tools and stories that help people see and understand the living world, especially in arid ecosystems.
+We believe that careful observation, thoughtful organization, and open sharing can help more people discover and understand biodiversity. Through software development, photography, scientific illustration, open data, and long-term field projects, we create freely available resources that make the natural world more accessible.
 
-## Contact Us
+Each project is built around the same idea: to observe, document, organize, and share knowledge in ways that are useful to naturalists, educators, researchers, and anyone curious about the living world.
+
+Whether it’s a species reference, a field photograph, an dataset, or a software tool, our goal is always the same—to create resources that people can use, learn from, and return to.
+
+We build tools and stories that help people see and understand the living world.
+
+## Contact
+
+We welcome collaborations, data sharing, project ideas, corrections, and conversations with fellow naturalists, educators, researchers, photographers, and anyone curious about the natural world.
+
+Whether you’ve spotted an error, have a question about a project, or are interested in working together, we’d love to hear from you.
 
 **Email:** [info@overstegerstudios.org](mailto:info@overstegerstudios.org)
 
 **Location:** Sonoran Desert, Arizona
-
-We welcome collaborations, data-sharing, and feedback from fellow ecologists, photographers, educators, and curious people of all kinds.
