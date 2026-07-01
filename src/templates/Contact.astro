@@ -11,8 +11,9 @@ const { Content } = await entry.render();
 
 const { title, description, thumbnail } = entry.data;
 
-// Porting the form HTML.
-// Using standard Netlify form submission (no JS hijack required for basic functionality).
+// Submits directly to Formspree (https://formspree.io/f/myznygzl) — no
+// site-side backend needed. Plain HTML POST + _next redirect, no JS hijack.
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/myznygzl';
 ---
 
 <Layout title={title} description={description}>
@@ -27,49 +28,41 @@ const { title, description, thumbnail } = entry.data;
       <Content />
 
       <h3 id="forms">Form</h3>
-      <form name="contact" method="POST" data-netlify="true" action="/contact/thanks">
-        <input type="hidden" name="form-name" value="contact" />
-        <p hidden>
-           <label>Don’t fill this out: <input name="bot-field" /></label>
-        </p>
+      <form action={FORMSPREE_ENDPOINT} method="POST" class="contact-form">
+        <input type="hidden" name="_subject" value="New message from Oversteger Studios" />
+        <input type="hidden" name="_next" value="/contact/thanks" />
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
         <div class="row gtr-uniform">
           <div class="col-6 col-12-xsmall">
-            <input type="text" name="first-name" id="first-name" placeholder="First Name" required />
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required />
           </div>
           <div class="col-6 col-12-xsmall">
-            <input type="text" name="last-name" id="last-name" placeholder="Last Name" required />
-          </div>
-
-          <div class="col-6 col-12-xsmall">
-            <input type="email" name="email" id="demo-email" placeholder="Email" required />
-          </div>
-          <div class="col-6 col-12-xsmall">
-            <input type="text" name="location" id="location" placeholder="Location" required />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
           </div>
 
           <div class="col-12">
-            <select name="category" id="category" required>
-              <option value="">-Nature of Enquiry-</option>
-              <option value="General">General</option>
-              <option value="Purchase">Purchase</option>
-              <option value="Commissions">Commissions</option>
-              <option value="Exhibitions">Exhibitions</option>
-              <option value="Gallery Feature">Gallery Feature</option>
-              <option value="Other">Other</option>
+            <label for="reason">Reason for contact</label>
+            <select id="reason" name="reason">
+              <option value="General inquiry">General inquiry</option>
+              <option value="Project collaboration">Project collaboration</option>
+              <option value="Website or tool issue">Website or tool issue</option>
+              <option value="Media or image request">Media or image request</option>
+              <option value="Donation or support question">Donation or support question</option>
             </select>
           </div>
 
           <div class="col-12">
-            <textarea name="message" id="message" placeholder="Enter your message" rows="6" required></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="7" required></textarea>
           </div>
-
-          <div data-netlify-recaptcha="true"></div>
 
           <div class="col-12">
             <ul class="actions">
               <li>
-                <input type="submit" value="Send Message" class="primary" />
+                <button type="submit" class="primary">Send message</button>
               </li>
             </ul>
           </div>

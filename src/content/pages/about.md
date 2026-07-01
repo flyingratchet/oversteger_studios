@@ -1,5 +1,5 @@
 ---
-templateKey: page
+templateKey: contact-page
 title: About / Contact
 ---
 
