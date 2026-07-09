@@ -30,7 +30,7 @@ textarea {
     background: var(--color-bg);
     border-radius: var(--radius);
     border: none;
-    border: solid 1px #131313;
+    border: solid 1px var(--color-base);
     color: inherit;
     display: block;
     outline: 0;
@@ -58,8 +58,22 @@ input[type="search"]:focus,
 input[type="url"]:focus,
 select:focus,
 textarea:focus {
-    border-color: #131313;
-    box-shadow: 0 0 0 1px #131313;
+    border-color: var(--color-base);
+    box-shadow: 0 0 0 1px var(--color-base);
+}
+
+/* Browsers (WebKit/Blink) force their own white/light background and
+   faint text color on autofilled fields, ignoring page CSS — this
+   overrides that so autofilled values stay readable in dark mode. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--color-base);
+    -webkit-box-shadow: 0 0 0 1000px var(--color-bg) inset;
+    box-shadow: 0 0 0 1000px var(--color-bg) inset;
+    caret-color: var(--color-base);
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 select {
