@@ -3,7 +3,7 @@ templateKey: work-sub-page
 title: Sonoran Species Compendium
 description: A living record of Sonoran Desert biodiversity.
 thumbnail: /img/20230610-Miles_Ranch_Trailhead-Overson_Steger-B1141.jpg
-number: 1
+number: 5
 pagetype: ["main"]
 ---
 

@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PhotoGallery from '../components/PhotoGallery.astro';
 import { type CollectionEntry } from 'astro:content';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
   entry: CollectionEntry<'work'> | CollectionEntry<'news'> | CollectionEntry<'sold'>;
@@ -14,8 +16,31 @@ const { Content } = await entry.render();
 
 const { title, description, thumbnail } = entry.data;
 
-// Icons logic (replacing SVG imports with inline or similar)
-// For simplicity, using text or simple arrows.
+// Project pages can have a photo gallery living at src/images/gallery/<slug>/.
+// If a matching folder exists, its images become the page's main gallery.
+const galleryModules = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/images/gallery/*/*.{jpg,jpeg,png}',
+  { eager: true },
+);
+
+function labelFromFilename(path: string) {
+  const filename = path.split('/').pop() ?? '';
+  const base = filename.replace(/\.[^.]+$/, '');
+  const [date, location] = base.split('-');
+  const place = (location ?? base).replace(/_/g, ' ');
+  if (date && /^\d{8}$/.test(date)) {
+    const year = date.slice(0, 4);
+    const month = date.slice(4, 6);
+    const monthName = new Date(Number(year), Number(month) - 1).toLocaleString('en-US', { month: 'long' });
+    return `${place} — ${monthName} ${year}`;
+  }
+  return place;
+}
+
+const galleryImages = Object.entries(galleryModules)
+  .filter(([path]) => path.includes(`/gallery/${entry.slug}/`))
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, mod]) => ({ image: mod.default, alt: labelFromFilename(path) }));
 ---
 
 <Layout title={title} description={description}>
@@ -39,6 +64,10 @@ const { title, description, thumbnail } = entry.data;
     <div class="post-content-body">
       <Content />
     </div>
+
+    {galleryImages.length > 0 && (
+      <PhotoGallery images={galleryImages} galleryId={entry.slug} />
+    )}
 
     <div class="post-link">
       <div>

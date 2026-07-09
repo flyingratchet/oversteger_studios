@@ -3,7 +3,7 @@ templateKey: work-sub-page
 title: Rewilding Our Yard
 description: An intimate experiment in transforming an urban yard into a haven for native plants and animals.
 thumbnail: /img/20230518-Tempe_House-Overson_Steger-B9859.jpg
-number: 3
+number: 2
 pagetype: ["main"]
 ---
 

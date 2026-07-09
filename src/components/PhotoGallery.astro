@@ -1,0 +1,95 @@
+---
+import { Image, getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface GalleryImage {
+  image: ImageMetadata;
+  alt: string;
+}
+
+interface Props {
+  images: GalleryImage[];
+  galleryId?: string;
+}
+
+const { images, galleryId = 'photo-gallery' } = Astro.props;
+
+const items = await Promise.all(
+  images.map(async ({ image, alt }) => {
+    const full = await getImage({ src: image, width: 1800, format: 'webp', quality: 82 });
+    return { image, alt, fullSrc: full.src };
+  }),
+);
+---
+
+<div class="photo-gallery">
+  {items.map(({ image, alt, fullSrc }) => (
+    <a
+      href={fullSrc}
+      class="photo-gallery-item glightbox"
+      data-gallery={galleryId}
+      data-title={alt}
+    >
+      <Image
+        src={image}
+        alt={alt}
+        widths={[320, 640, 960]}
+        sizes="(max-width: 740px) 50vw, (max-width: 1280px) 33vw, 25vw"
+        format="webp"
+        quality={80}
+        loading="lazy"
+      />
+    </a>
+  ))}
+</div>
+
+<script>
+  import GLightbox from 'glightbox';
+  import 'glightbox/dist/css/glightbox.min.css';
+
+  function initPhotoGalleries() {
+    const lightbox = GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      zoomable: true,
+      draggable: true,
+    });
+    return lightbox;
+  }
+
+  let current = initPhotoGalleries();
+
+  document.addEventListener('astro:page-load', () => {
+    current?.destroy?.();
+    current = initPhotoGalleries();
+  });
+</script>
+
+<style>
+  .photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem;
+    margin: 2rem 0;
+  }
+
+  .photo-gallery-item {
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius);
+    aspect-ratio: 4 / 3;
+  }
+
+  .photo-gallery-item :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .photo-gallery-item:hover :global(img) {
+    transform: scale(1.05);
+  }
+</style>
