@@ -9,7 +9,7 @@ We believe that careful observation, thoughtful organization, and open sharing c
 
 Each project is built around the same idea: to observe, document, organize, and share knowledge in ways that are useful to naturalists, educators, researchers, and anyone curious about the living world.
 
-Whether it’s a species reference, a field photograph, an dataset, or a software tool, our goal is always the same—to create resources that people can use, learn from, and return to.
+Whether it’s a species reference, a field photograph, a dataset, or a software tool, our goal is always the same—to create resources that people can use, learn from, and return to.
 
 We build tools and stories that help people see and understand the living world.
 
@@ -18,7 +18,3 @@ We build tools and stories that help people see and understand the living world.
 We welcome collaborations, data sharing, project ideas, corrections, and conversations with fellow naturalists, educators, researchers, photographers, and anyone curious about the natural world.
 
 Whether you’ve spotted an error, have a question about a project, or are interested in working together, we’d love to hear from you.
-
-**Email:** [info@overstegerstudios.org](mailto:info@overstegerstudios.org)
-
-**Location:** Sonoran Desert, Arizona
