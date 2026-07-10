@@ -117,20 +117,26 @@ const { title, description } = Astro.props;
                 initTheme();
             });
 
-            // Re-apply theme on swap to prevent flash?
-            // The is:inline script in head handles the initial check on reload.
-            // astro:after-swap handles verifying state after client-side nav.
-            document.addEventListener("astro:after-swap", () => {
-                const theme = localStorage.getItem("theme");
-                if (
-                    theme === "dark" ||
-                    (!theme &&
-                        window.matchMedia("(prefers-color-scheme: dark)")
-                            .matches)
-                ) {
-                    document.documentElement.setAttribute("data-theme", "dark");
+            // Astro's ClientRouter copies the incoming (inert) document's
+            // <html> attributes onto the live page during the swap. That
+            // incoming document hasn't run its inline theme script yet, so
+            // without this the swap briefly clears data-theme and flashes
+            // light mode before astro:after-swap can restore it. Stamping
+            // the current theme onto event.newDocument here means the swap
+            // never actually removes the attribute in the first place.
+            document.addEventListener("astro:before-swap", (event) => {
+                const isDark =
+                    document.documentElement.getAttribute("data-theme") ===
+                    "dark";
+                if (isDark) {
+                    event.newDocument.documentElement.setAttribute(
+                        "data-theme",
+                        "dark",
+                    );
                 } else {
-                    document.documentElement.removeAttribute("data-theme");
+                    event.newDocument.documentElement.removeAttribute(
+                        "data-theme",
+                    );
                 }
             });
         </script>
