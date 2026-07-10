@@ -7,4 +7,4 @@ number: 3
 pagetype: ["main"]
 ---
 
-An open reference for identifying and understanding North America's small mammals. Combining detailed identification resources with structured data, WhiskerWiki helps researchers, wildlife professionals, and curious naturalists navigate one of the continent's most overlooked groups of animals.
+An open reference for identifying and understanding North America's small mammals. Combining detailed identification resources with structured data, WhiskerWiki helps researchers, wildlife professionals, and curious naturalists navigate one of the continent's most overlooked groups of mammals.
