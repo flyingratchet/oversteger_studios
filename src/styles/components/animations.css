@@ -1,21 +1,18 @@
 /* Animations
 /* ---------------------------------------------------------- */
 
-.transition-fade {
-    transition: 0.25s;
-    opacity: 1;
-    animation: slideUp 0.9s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-    transform: translate3d(0, 4vh, 0);
-}
-html.is-animating .transition-fade {
-    opacity: 0;
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translate3d(0, 4vh, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
+/*
+ * Browsers cross-fade ::view-transition-old/new(root) with
+ * mix-blend-mode: plus-lighter by default. That additively blends the
+ * outgoing and incoming page snapshots, which can spike to a bright
+ * flash wherever their content doesn't line up pixel-for-pixel -
+ * especially visible over the dark theme. Normal blending just fades
+ * opacity without adding color values together.
+ */
+::view-transition-old(root),
+::view-transition-new(root) {
+    /* !important: the browser's own view-transition animation sets this
+       property too, and CSS Animations outrank plain author rules in the
+       cascade, so a normal-priority declaration here would be ignored. */
+    mix-blend-mode: normal !important;
 }

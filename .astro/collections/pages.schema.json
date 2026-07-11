@@ -29,6 +29,12 @@
         "thumbnail": {
           "type": "string"
         },
+        "card_thumbnail": {
+          "type": "string"
+        },
+        "image_position": {
+          "type": "string"
+        },
         "templateKey": {
           "type": "string"
         },
