@@ -14,7 +14,7 @@ interface Props {
 const { entry, next, prev, baseSlug } = Astro.props;
 const { Content } = await entry.render();
 
-const { title, description, thumbnail } = entry.data;
+const { title, description, thumbnail, external_url } = entry.data;
 
 // Project pages can have a photo gallery living at src/images/gallery/<slug>/.
 // If a matching folder exists, its images become the page's main gallery.
@@ -57,7 +57,13 @@ const galleryImages = Object.entries(galleryModules)
 
     {thumbnail && (
       <div class="post-content-image">
-        <img src={thumbnail} class="kg-image" alt={title} />
+        {external_url ? (
+          <a href={external_url} target="_blank" rel="noopener noreferrer">
+            <img src={thumbnail} class="kg-image" alt={title} />
+          </a>
+        ) : (
+          <img src={thumbnail} class="kg-image" alt={title} />
+        )}
       </div>
     )}
 

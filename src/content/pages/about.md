@@ -3,7 +3,7 @@ templateKey: contact-page
 title: About / Contact
 ---
 
-Oversteger Studios is an independent natural history studio created by Rick Overson and Laura Steger.
+Oversteger Studios is an independent natural history studio created by [Rick Overson](https://rickoverson.com) and [Laura Steger](https://laurasteger.com).
 
 We believe that careful observation, thoughtful organization, and open sharing can help more people discover and understand biodiversity. Through software development, photography, scientific illustration, open data, and long-term field projects, we create freely available resources that make the natural world more accessible.
 

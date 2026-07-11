@@ -35,6 +35,9 @@
         "image_position": {
           "type": "string"
         },
+        "external_url": {
+          "type": "string"
+        },
         "templateKey": {
           "type": "string"
         },

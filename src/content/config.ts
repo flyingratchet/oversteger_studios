@@ -7,6 +7,7 @@ const commonSchema = z.object({
   thumbnail: z.string().optional(),
   card_thumbnail: z.string().optional(),
   image_position: z.string().optional(),
+  external_url: z.string().optional(),
   templateKey: z.string().optional(),
   // Add other fields as discovered
   image: z.string().optional(),
