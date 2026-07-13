@@ -12,6 +12,8 @@ One of the most rewarding aspects of this journey has been watching life return.
 
 We are passionate about sharing what we've learned and encouraging others to see their own landscapes as opportunities for conservation. Our garden was featured in Zygote Quarterly for its ecological design and as an example of the beauty and fulfillment that come from creating spaces for native species. It has also been certified by the Maricopa Pollinator Pathway Garden Certification Program in recognition of its value as pollinator habitat. We hope our work inspires others to discover that conservation can begin right outside the front door, one native plant at a time.
 
+<div class="featured-links">
+
 <hr>
 
 #### Featured & Recognized
@@ -20,4 +22,6 @@ We are passionate about sharing what we've learned and encouraging others to see
   <li><a href="https://zqjournal.org/pdfs/ZQ_issue_39.pdf" class="button primary" target="_blank" rel="noopener noreferrer">As Featured in Zygote Quarterly</a></li>
   <li><a href="https://libguides.maricopa.edu/seed/pathway" class="button primary" target="_blank" rel="noopener noreferrer">Maricopa County Pollinator Pathway</a></li>
 </ul>
+
+</div>
 

@@ -343,6 +343,27 @@ production stylesheet in assets/built/screen.css using gulp dev
 }
 
 
+/* Featured links (in-content CTA block, e.g. press mentions) */
+.featured-links {
+  margin-top: 3rem;
+}
+
+.featured-links hr {
+  margin: 0 0 2rem;
+}
+
+.featured-links hr:after {
+  display: none;
+}
+
+.featured-links h4 {
+  margin-top: 0;
+}
+
+.featured-links .actions {
+  margin-bottom: 2rem;
+}
+
 /* Image boarder */
 .kg-image { border-radius: 10px; }
 

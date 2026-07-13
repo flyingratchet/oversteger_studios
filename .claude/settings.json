@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:4321/work/rewilding -o /tmp/rewilding2.html)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}
