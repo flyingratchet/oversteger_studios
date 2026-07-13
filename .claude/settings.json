@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(curl -s http://localhost:4321/work/rewilding -o /tmp/rewilding2.html)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(xargs -I{} sh -c 'echo \"--- {} ---\"; grep -E \"^\\(title|thumbnail|card_thumbnail|number|external_url\\):\" {}')"
     ]
   }
 }
