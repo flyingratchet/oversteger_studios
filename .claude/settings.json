@@ -3,7 +3,13 @@
     "allow": [
       "Bash(curl -s http://localhost:4321/work/rewilding -o /tmp/rewilding2.html)",
       "Bash(node -e ' *)",
-      "Bash(xargs -I{} sh -c 'echo \"--- {} ---\"; grep -E \"^\\(title|thumbnail|card_thumbnail|number|external_url\\):\" {}')"
+      "Bash(xargs -I{} sh -c 'echo \"--- {} ---\"; grep -E \"^\\(title|thumbnail|card_thumbnail|number|external_url\\):\" {}')",
+      "Bash(git status *)",
+      "Bash(git mv *)",
+      "Bash(git rm *)",
+      "Bash(md5 \"public/img/20230604-Tempe_House-Overson_Steger-B0542.jpg\" \"src/images/gallery/photography/20230604-Tempe_House-Overson_Steger-B0542.jpg\")",
+      "Bash(md5 \"src/images/20230729-Tempe_House-Overson_Steger-B3849-Enhanced-NR.jpg\" \"src/images/gallery/photography/20230729-Tempe_House-Overson_Steger-B3849-Enhanced-NR.jpg\")",
+      "Bash(git add *)"
     ]
   }
 }
