@@ -2,7 +2,7 @@
 templateKey: work-sub-page
 title: WhiskerWiki
 description: An open reference for identifying North America's small mammals.
-thumbnail: /img/whiskerwiki-screenshot-2025-07-09.png
+thumbnail: /img/WhiskerWiki-home-page-screenshot-2026-07-13.png
 external_url: https://whiskerwiki.org
 number: 3
 pagetype: ["main"]
