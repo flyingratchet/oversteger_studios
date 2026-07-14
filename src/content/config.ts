@@ -18,6 +18,8 @@ const commonSchema = z.object({
   number: z.number().optional(),
   pagetype: z.array(z.string()).optional(),
   gallery_captions: z.record(z.string()).optional(),
+  in_progress: z.boolean().optional(),
+  in_progress_message: z.string().optional(),
 }).partial();
 
 const work = defineCollection({

@@ -14,7 +14,7 @@ interface Props {
 const { entry, next, prev, baseSlug } = Astro.props;
 const { Content } = await entry.render();
 
-const { title, description, thumbnail, thumbnail_caption, external_url, gallery_captions } = entry.data;
+const { title, description, thumbnail, thumbnail_caption, external_url, gallery_captions, in_progress, in_progress_message } = entry.data;
 
 // Project pages can have a photo gallery living at src/images/gallery/<slug>/.
 // If a matching folder exists, its images become the page's main gallery.
@@ -42,8 +42,11 @@ const galleryImages = Object.entries(galleryModules)
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([path, mod]) => {
     const filename = path.split('/').pop() ?? '';
-    const caption = gallery_captions?.[filename] ?? labelFromFilename(path);
-    return { image: mod.default, alt: caption };
+    return {
+      image: mod.default,
+      alt: labelFromFilename(path),
+      caption: gallery_captions?.[filename],
+    };
   });
 ---
 
@@ -57,6 +60,12 @@ const galleryImages = Object.entries(galleryModules)
 
     {description && (
       <p class="post-content-excerpt">{description}</p>
+    )}
+
+    {in_progress && (
+      <p class="post-content-notice">
+        {in_progress_message || 'This project is still taking shape — more content is on its way.'}
+      </p>
     )}
 
     {thumbnail && (

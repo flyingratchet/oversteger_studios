@@ -71,6 +71,12 @@
             "type": "string"
           }
         },
+        "in_progress": {
+          "type": "boolean"
+        },
+        "in_progress_message": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }

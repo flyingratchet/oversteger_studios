@@ -5,6 +5,7 @@ import type { ImageMetadata } from 'astro';
 interface GalleryImage {
   image: ImageMetadata;
   alt: string;
+  caption?: string;
 }
 
 interface Props {
@@ -15,20 +16,20 @@ interface Props {
 const { images, galleryId = 'photo-gallery' } = Astro.props;
 
 const items = await Promise.all(
-  images.map(async ({ image, alt }) => {
+  images.map(async ({ image, alt, caption }) => {
     const full = await getImage({ src: image, width: 1800, format: 'webp', quality: 82 });
-    return { image, alt, fullSrc: full.src };
+    return { image, alt, caption, fullSrc: full.src };
   }),
 );
 ---
 
 <div class="photo-gallery">
-  {items.map(({ image, alt, fullSrc }) => (
+  {items.map(({ image, alt, caption, fullSrc }) => (
     <a
       href={fullSrc}
       class="photo-gallery-item glightbox"
       data-gallery={galleryId}
-      data-title={alt}
+      data-title={caption}
     >
       <Image
         src={image}
@@ -98,5 +99,44 @@ const items = await Promise.all(
 
   .photo-gallery-item:hover :global(img) {
     transform: scale(1.05);
+  }
+
+  /* Lightbox caption — GLightbox injects its markup into <body> at runtime,
+     outside this component's tree, so these rules target its classes globally.
+     GLightbox already keeps `.gslide-description` sized to track the image
+     width via an inline max-width (it's a flex sibling of the image, not a
+     child, so it can't be absolutely overlaid on top of it) — we just restyle
+     it from the default white bar into a dark plate that sits under the photo. */
+  :global(.gslide-description) {
+    background: rgba(10, 10, 10, 0.92) !important;
+    pointer-events: none;
+  }
+
+  :global(.gdesc-open .gslide-media) {
+    opacity: 1 !important;
+  }
+
+  :global(.gdesc-inner) {
+    padding: 1.6rem 2rem !important;
+  }
+
+  :global(.gslide-title) {
+    margin: 0 !important;
+    color: #fff !important;
+    font-family: var(--font-serif) !important;
+    font-size: 1.6rem !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
+  }
+
+  @media (max-width: 500px) {
+    :global(.gdesc-inner) {
+      padding: 1.2rem 1.2rem !important;
+    }
+
+    :global(.gslide-title) {
+      font-size: 1.4rem !important;
+    }
   }
 </style>
