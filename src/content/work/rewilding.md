@@ -6,6 +6,7 @@ thumbnail: /img/20230518-Tempe_House-Overson_Steger-B9859.jpg
 thumbnail_caption: A potter wasp sleeps atop the dried stalk of a plant in the yard.
 number: 1
 pagetype: ["main"]
+in_progress: true
 ---
 
 What happens when a suburban yard is designed for wildlife instead of lawns? For more than a decade, we have been working together to transform our suburban yard into a refuge for the native plants and wildlife of our home county. What began as a shared interest in gardening has grown into a long-term collaboration in ecological restoration, guided by the belief that even small urban spaces can make a meaningful difference for biodiversity. Today, our landscape is home to more than 100 plant species native to Maricopa County, Arizona, creating habitat for native bees, butterflies, birds, reptiles, and countless other species that depend on these plants to survive.

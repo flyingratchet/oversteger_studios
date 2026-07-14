@@ -3,7 +3,10 @@ import { getCollection } from 'astro:content';
 import WorkTemplate from '../../templates/Work.astro';
 
 export async function getStaticPaths() {
-  const workEntries = await getCollection('work');
+  // Entries flagged `do_not_show` are excluded entirely: no page is built for
+  // them (direct links 404), and they're skipped when computing prev/next so
+  // neighboring pages automatically bridge across the gap.
+  const workEntries = (await getCollection('work')).filter((entry) => !entry.data.do_not_show);
 
   // Match the ordering used on the home page grid (src/pages/index.astro),
   // which sorts by the `number` frontmatter field, not by date.

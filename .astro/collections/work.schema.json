@@ -77,6 +77,9 @@
         "in_progress_message": {
           "type": "string"
         },
+        "do_not_show": {
+          "type": "boolean"
+        },
         "$schema": {
           "type": "string"
         }

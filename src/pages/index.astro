@@ -9,7 +9,7 @@ const allWork = await getCollection('work');
 const allContent = [...allPages, ...allWork];
 
 const posts = allContent.filter(item => {
-    return item.data.pagetype && item.data.pagetype.includes('main');
+    return item.data.pagetype && item.data.pagetype.includes('main') && !item.data.do_not_show;
 }).sort((a, b) => {
     const numA = a.data.number || 9999;
     const numB = b.data.number || 9999;

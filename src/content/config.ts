@@ -20,6 +20,7 @@ const commonSchema = z.object({
   gallery_captions: z.record(z.string()).optional(),
   in_progress: z.boolean().optional(),
   in_progress_message: z.string().optional(),
+  do_not_show: z.boolean().optional(),
 }).partial();
 
 const work = defineCollection({
