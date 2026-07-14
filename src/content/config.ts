@@ -5,6 +5,7 @@ const commonSchema = z.object({
   description: z.string().optional(),
   date: z.date().optional(),
   thumbnail: z.string().optional(),
+  thumbnail_caption: z.string().optional(),
   card_thumbnail: z.string().optional(),
   image_position: z.string().optional(),
   external_url: z.string().optional(),

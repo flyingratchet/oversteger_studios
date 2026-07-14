@@ -14,7 +14,7 @@ interface Props {
 const { entry, next, prev, baseSlug } = Astro.props;
 const { Content } = await entry.render();
 
-const { title, description, thumbnail, external_url } = entry.data;
+const { title, description, thumbnail, thumbnail_caption, external_url } = entry.data;
 
 // Project pages can have a photo gallery living at src/images/gallery/<slug>/.
 // If a matching folder exists, its images become the page's main gallery.
@@ -64,6 +64,9 @@ const galleryImages = Object.entries(galleryModules)
         ) : (
           <img src={thumbnail} class="kg-image" alt={title} />
         )}
+        {thumbnail_caption && (
+          <p class="post-content-image-caption" set:html={thumbnail_caption} />
+        )}
       </div>
     )}
 
@@ -94,3 +97,39 @@ const galleryImages = Object.entries(galleryModules)
 
   </article>
 </Layout>
+
+<style>
+  .post-content-image-caption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 3rem 2rem 1.4rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+    color: #fff;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    text-align: right;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+  }
+
+  .post-content-image:hover .post-content-image-caption,
+  .post-content-image:focus-within .post-content-image-caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 500px) {
+    .post-content-image-caption {
+      opacity: 1;
+      transform: translateY(0);
+      font-size: 1.3rem;
+      padding: 2.5rem 1.2rem 1rem;
+    }
+  }
+</style>

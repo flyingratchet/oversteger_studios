@@ -29,6 +29,9 @@
         "thumbnail": {
           "type": "string"
         },
+        "thumbnail_caption": {
+          "type": "string"
+        },
         "card_thumbnail": {
           "type": "string"
         },

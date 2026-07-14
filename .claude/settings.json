@@ -10,7 +10,8 @@
       "Bash(md5 \"public/img/20230604-Tempe_House-Overson_Steger-B0542.jpg\" \"src/images/gallery/photography/20230604-Tempe_House-Overson_Steger-B0542.jpg\")",
       "Bash(md5 \"src/images/20230729-Tempe_House-Overson_Steger-B3849-Enhanced-NR.jpg\" \"src/images/gallery/photography/20230729-Tempe_House-Overson_Steger-B3849-Enhanced-NR.jpg\")",
       "Bash(git add *)",
-      "Bash(git restore *)"
+      "Bash(git restore *)",
+      "Bash(npx astro *)"
     ]
   }
 }
