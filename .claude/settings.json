@@ -11,7 +11,8 @@
       "Bash(md5 \"src/images/20230729-Tempe_House-Overson_Steger-B3849-Enhanced-NR.jpg\" \"src/images/gallery/photography/20230729-Tempe_House-Overson_Steger-B3849-Enhanced-NR.jpg\")",
       "Bash(git add *)",
       "Bash(git restore *)",
-      "Bash(npx astro *)"
+      "Bash(npx astro *)",
+      "Bash(curl -sv https://overstegerstudios.com/work/compendium)"
     ]
   }
 }

@@ -14,7 +14,7 @@ interface Props {
 const { entry, next, prev, baseSlug } = Astro.props;
 const { Content } = await entry.render();
 
-const { title, description, thumbnail, thumbnail_caption, external_url } = entry.data;
+const { title, description, thumbnail, thumbnail_caption, external_url, gallery_captions } = entry.data;
 
 // Project pages can have a photo gallery living at src/images/gallery/<slug>/.
 // If a matching folder exists, its images become the page's main gallery.
@@ -40,7 +40,11 @@ function labelFromFilename(path: string) {
 const galleryImages = Object.entries(galleryModules)
   .filter(([path]) => path.includes(`/gallery/${entry.slug}/`))
   .sort(([a], [b]) => a.localeCompare(b))
-  .map(([path, mod]) => ({ image: mod.default, alt: labelFromFilename(path) }));
+  .map(([path, mod]) => {
+    const filename = path.split('/').pop() ?? '';
+    const caption = gallery_captions?.[filename] ?? labelFromFilename(path);
+    return { image: mod.default, alt: caption };
+  });
 ---
 
 <Layout title={title} description={description}>

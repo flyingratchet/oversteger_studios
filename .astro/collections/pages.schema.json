@@ -65,6 +65,12 @@
             "type": "string"
           }
         },
+        "gallery_captions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
         "$schema": {
           "type": "string"
         }
