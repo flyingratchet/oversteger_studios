@@ -385,6 +385,28 @@ production stylesheet in assets/built/screen.css using gulp dev
   margin-bottom: 2rem;
 }
 
+/* Breadcrumb trail inside a featured-links block */
+.featured-links .trail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.8rem;
+  margin-bottom: 1.6rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.featured-links .trail a {
+  color: var(--color-base);
+  text-decoration: none;
+}
+
+.featured-links .trail a:hover,
+.featured-links .trail a[aria-current] {
+  text-decoration: underline;
+}
+
 /* Image boarder */
 .kg-image { border-radius: 10px; }
 

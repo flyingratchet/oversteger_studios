@@ -15,3 +15,25 @@ gallery_captions:
 ---
 
 An ever-growing record of the remarkable diversity of life across the Sonoran Desert. Built from thousands of field observations over more than a decade, the Compendium focuses connects species, habitats, and ecological interactions into a freely accessible resource for naturalists, educators, and the endlessly curious.
+
+<div class="featured-links">
+
+<hr>
+
+<nav class="trail" aria-label="Breadcrumb">
+  <a href="/">Oversteger Studios</a>
+  <span aria-hidden="true">›</span>
+  <a href="/work/compendium">Sonoran Species Compendium</a>
+  <span aria-hidden="true">›</span>
+  <a href="https://sonorandesertcompendium.org" target="_blank" rel="noopener noreferrer" aria-current="page">Biodiversity Catalog</a>
+</nav>
+
+#### Explore the Biodiversity Catalog
+
+Dive into our field catalog of the organisms we've photographed across Arizona and beyond. Browse the gallery or follow sightings on the map. You can filter by collection site, by taxonomy from kingdom to species, or by behavior, life stage, and anatomy. Each species has its own summary of when, where, and alongside what else it was found.
+
+<ul class="actions">
+  <li><a href="https://sonorandesertcompendium.org" class="button primary" target="_blank" rel="noopener noreferrer">Enter the Catalog</a></li>
+</ul>
+
+</div>
