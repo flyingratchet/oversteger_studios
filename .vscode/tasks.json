@@ -26,7 +26,7 @@
     {
       "label": "Deploy to overstegerstudios.com",
       "type": "shell",
-      "command": "rsync -avz --delete ./dist/ hopperwiki:/home/hopperwi/overstegerstudios.com/",
+      "command": "rsync -avz --delete --exclude='.well-known/' ./dist/ hosting:/home/hopperwi/overstegerstudios.com/",
       "dependsOn": "Astro: Build",
       "group": {
         "kind": "build",
